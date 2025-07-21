@@ -12,7 +12,8 @@ class IndexController extends Action {
         // $this->view->dados = ['Sofá', 'Cadeira', 'Cama'];
         $conn = Connection::getDb();
         $produto = new Produto($conn);
-        $produtos = $produto->getProduto();
+        $produtos = $produto->getProdutos();
+        $this->view->dados = $produtos;
         $this->render('index', 'layout1');
     }
 
