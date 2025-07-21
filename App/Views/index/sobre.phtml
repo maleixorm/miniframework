@@ -1,8 +1,15 @@
 <h1>Sobre</h1>
 <hr>
 
-<?php
-    echo 'Chegamos ao Index Controller e disparamos a action sobre';
-?>
 
-<pre><?= print_r($this->view->dados); ?></pre>
+
+<div class="d-flex justify-content-center gap-3 flex-wrap">
+    <?php foreach ($this->view->dados as $key => $info) { ?>
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title"><?= $info['titulo'] ?></h5>
+                <p class="card-text"><?= $info['descricao'] ?></p>
+            </div>
+        </div>
+    <?php } ?>
+</div>
