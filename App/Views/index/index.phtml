@@ -1,9 +1,21 @@
 <h1>Index</h1>
 <hr>
 
-<?php
-    echo 'Chegamos ao Index Controller e disparamos a action index';
-    echo '<pre>';
-        print_r($this->view->dados);
-    echo '</pre>';
-?>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Descrição</th>
+            <th scope="col">Preço</th>
+        </tr>
+    </thead>
+    <?php foreach ($this->view->dados as $key => $produto) { ?>
+        <tbody>
+            <tr>
+                <td scope="row"><?= $produto['id'] ?></td>
+                <td><?= $produto['descricao'] ?></td>
+                <td><?= $produto['preco'] ?></td>
+            </tr>
+        </tbody>
+    <?php } ?>
+</table>
